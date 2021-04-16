@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MmM-6o-6h8">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Google AuthVC-->
+        <scene sceneID="TIF-8M-0xY">
+            <objects>
+                <viewController id="MmM-6o-6h8" customClass="GoogleAuthVC" customModule="Firebase_Login" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HVJ-YY-Wlh">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIw-ve-fYc">
+                                <rect key="frame" x="89" y="482" width="250" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="8ld-zs-oU0"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="-1"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="MmM-6o-6h8" eventType="touchUpInside" id="f7g-9d-Ndq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuW-8P-0CM" customClass="GIDSignInButton">
+                                <rect key="frame" x="89" y="300" width="250" height="152"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aeg-OW-lDu">
+                                <rect key="frame" x="0.0" y="596" width="428" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="lfO-1H-Y4a"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dlx-8V-bWe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YuW-8P-0CM" firstAttribute="top" secondItem="HVJ-YY-Wlh" secondAttribute="top" constant="300" id="6OV-NM-REA"/>
+                            <constraint firstItem="YuW-8P-0CM" firstAttribute="leading" secondItem="xIw-ve-fYc" secondAttribute="leading" id="A6C-Qc-rRi"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="aeg-OW-lDu" secondAttribute="centerXWithinMargins" id="Biw-06-xub"/>
+                            <constraint firstItem="YuW-8P-0CM" firstAttribute="centerX" secondItem="HVJ-YY-Wlh" secondAttribute="centerX" id="EQt-mN-YM4"/>
+                            <constraint firstItem="YuW-8P-0CM" firstAttribute="trailing" secondItem="xIw-ve-fYc" secondAttribute="trailing" id="Ie4-N8-4jq"/>
+                            <constraint firstItem="aeg-OW-lDu" firstAttribute="top" secondItem="xIw-ve-fYc" secondAttribute="bottom" constant="66" id="Jeu-97-zsa"/>
+                            <constraint firstItem="xIw-ve-fYc" firstAttribute="top" secondItem="YuW-8P-0CM" secondAttribute="bottom" constant="30" id="NeG-pv-ZIo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aeg-OW-lDu" secondAttribute="bottomMargin" constant="8" id="Owf-Ta-WRz"/>
+                            <constraint firstItem="YuW-8P-0CM" firstAttribute="leading" secondItem="dlx-8V-bWe" secondAttribute="leading" constant="89" id="Tdk-EY-KdF"/>
+                            <constraint firstItem="aeg-OW-lDu" firstAttribute="leading" secondItem="dlx-8V-bWe" secondAttribute="leading" id="cAI-QI-03i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="YuW-8P-0CM" id="3yr-S5-IdJ"/>
+                        <outlet property="tableView" destination="aeg-OW-lDu" id="Ywn-oc-SJF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7Z-Ca-clQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250.467289719626" y="-34.341252699784022"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
